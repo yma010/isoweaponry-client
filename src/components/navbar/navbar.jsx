@@ -6,6 +6,7 @@ import { logoutUser } from '../../actions/session_actions';
 
 export default function Nav() {
     const [searchParams, setSearchParams] = useState("");
+
     const dispatch = useDispatch();
     const user = useSelector((state) => (state.user));
 

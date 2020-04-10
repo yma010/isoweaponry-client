@@ -1,14 +1,62 @@
 .nav-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 10vw;
+    margin-right: 10vw;
+
     height: 10vh;
     grid-area: 1 / 1 / 2 / 4;
-    
+
     .account-buttons {
         .logout-button {
             height: 2rem;
             border: none;
+        }
+    }
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    grid-area: 1 / 1 / 6 / 2;
+
+    place-self: start center;
+
+    margin-top: 5rem;
+    
+    .sidebar-nav-link {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid lightgrey;
+        
+        text-emphasis: center;
+
+        a:hover {
+            font-weight: 700;
+        }
+    }
+
+    .sidebar-nav-link:first-of-type {
+        margin-top: 1.75rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid lightgrey;
+        border-top: 1px solid lightgrey;
+
+        text-emphasis: center;
+    }
+
+
+    img {
+        width: auto;
+        height: 15vh;
+        &:hover {
+            opacity: 0.75;
         }
     }
 }

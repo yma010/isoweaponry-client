@@ -1,16 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ISOWeaponryBanner from '../../stylesheets/images/ISO_Banner.png';
+import isoweaponryMain from '../../stylesheets/images/isoweaponryMain.jpg';
 
 function Splash() {
     return (
       <>
         <div className="splash-container">
           <div className="header-container">
-            <img src={`${ISOWeaponryBanner}`} alt=""/>
-            <Link path="/index">
-              <button className="button">Enter</button>
-            </Link>
+            <img src={isoweaponryMain}/>
+            <h1 className='title'> Our Mission: </h1> 
+            <p>ISO Weaponry is an affordable alternative to include realistic looking prop firearms for photography.</p>
           </div>
         </div>
       </>

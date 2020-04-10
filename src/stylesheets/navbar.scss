@@ -3,11 +3,12 @@
     flex-direction: row;
     justify-content: space-between;
     grid-area: 1 / 1 / 2 / 4;
-    height: 10vh;
+    height: 5vh;
     
-    margin-left: 10vw;
-    margin-right: 10vw;
-    
+    margin-left: 7vw;
+    margin-right: 7vw;
+    border-bottom: 1px lightgrey solid;
+
     .searchbar {
         margin-top: 0.5vh;
         .searchbar-input {

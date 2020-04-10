@@ -7,7 +7,7 @@ import Splash from './splash/splash';
 import Nav from './navbar/navbar';
 
 const App = () => (
-    <div>
+    <div className='page-container'>
         <Nav/>
         <Switch>
             <Route path='/' component={Splash} exact/>

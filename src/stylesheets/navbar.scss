@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: space-around;
     height: 10vh;
-
+    grid-area: 1 / 1 / 2 / 4;
+    
     .account-buttons {
         .logout-button {
             height: 2rem;

@@ -10,11 +10,17 @@
     height: 100%;
     width: 100%;
 
+    // background-image: url('./images/ISO\ Weaponry\ Logo.png');
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    
+    
     font-family: "Centuy Gothic", CenturyGothic, Helvetica;
 
     .page-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 25vw auto auto;
         grid-template-rows: repeat(5, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;

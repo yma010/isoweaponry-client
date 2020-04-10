@@ -31,8 +31,8 @@ export default function Nav() {
         if (user) {
             return (
               <div className="nav-container">
-                <div className='searbar'>
-                  <input type="search" name="" id="" />
+                <div className='searchbar'>
+                  <input className='searchbar-input' type="search" name="" id="" />
                 </div>
                 <Link path="/profile">Account</Link>
                 <button onClick={logout}>Logout</button>
@@ -44,9 +44,9 @@ export default function Nav() {
 
     return (
       <div className="nav-container">
-        <div className="searbar">
+        <div className="searchbar">
           <label htmlFor="search"> Search:
-          <input type="search" name="shop-search" id="searchbar" />
+          <input className='searchbar-input' type="search" name="shop-search" id="searchbar" />
           </label>
         </div>
         <div className='account-buttons'>

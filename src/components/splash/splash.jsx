@@ -7,8 +7,10 @@ function Splash() {
         <div className="splash-container">
           <div className="header-container">
             <img src={isoweaponryMain}/>
-            <h1 className='title'> Our Mission: </h1> 
-            <p>ISO Weaponry is an affordable alternative to include realistic looking prop firearms for photography.</p>
+            <section className='mission-statement-text'>
+            <h1 className='title'> Our Mission:</h1> 
+            <p> ISO Weaponry is an affordable alternative to include realistic looking prop firearms for photography.</p>
+            </section>
           </div>
         </div>
       </>

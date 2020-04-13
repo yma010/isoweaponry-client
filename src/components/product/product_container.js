@@ -4,7 +4,7 @@ import ProductsIndex from "./products_index";
 import { withRouter } from "react-router-dom";
 
 const msp = state => ({
-  products: Object.values(state.entities.pets)
+  rentals: Object.values(state.entities.rentals)
 });
 
 const mdp = (dispatch, { location: { search } }) => {

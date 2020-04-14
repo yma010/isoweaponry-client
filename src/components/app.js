@@ -6,6 +6,7 @@ import {
 import Splash from './splash/splash';
 import Nav from './navbar/navbar';
 import Sidebar from './navbar/sidebar';
+import { SignUpForm } from '../components/session/registration'
 
 const App = () => (
     <div className='page-container'>
@@ -13,6 +14,7 @@ const App = () => (
         <Sidebar/>
         <Switch>
             <Route path='/' component={Splash} exact/>
+            <Route path='/signup' component={SignUpForm} exact/>
         </Switch>
     </div>
 )

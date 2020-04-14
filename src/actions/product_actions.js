@@ -1,36 +1,36 @@
 import * as APIProductUtil from "../util/products_api_util.js";
 
-export const RECEIVE_ALL_PRODUCTS = "RECEIVE_ALL_PRODUCTS";
-export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT";
+export const RECEIVE_ALL_RENTALS = "RECEIVE_ALL_RENTALS";
+export const RECEIVE_RENTAL = "RECEIVE_RENTAL";
 
-export const receiveAllProducts = (products) => ({
-    type: RECEIVE_ALL_PRODUCTS,
-    products
+export const receiveAllRentals = (rentals) => ({
+    type: RECEIVE_ALL_RENTALS,
+    rentals
 });
 
-export const receiveProduct = (payload) => {
+export const receiveRental = (payload) => {
     const {
         data
     } = payload;
 
-    const product = data.product;
+    const rental = data.rental;
   
     return {
-        type: RECEIVE_PRODUCT,
-        product,
+        type: RECEIVE_RENTAL,
+        rental,
         status: 200
     }
 };
 
-export const fetchProducts = (searchParams = "") => dispatch => {
+export const fetchRentals = () => dispatch => {
     APIProductUtil.fetchProducts(searchParams)
-        .then(products => dispatch(receiveAllProducts(products)))
+        .then(rentals => dispatch(receiveAllRentals(rentals)))
 };
 
-export const fetchProduct = product => {
+export const fetchRental = rental => {
     return dispatch => {
-        APIProductUtil.fetchPet(product)
-            .then(data => dispatch(receiveProduct(data)));
+        APIProductUtil.fetchRental(rental)
+            .then(data => dispatch(receiveRental(data)));
     };
 }
 

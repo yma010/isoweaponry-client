@@ -68,6 +68,7 @@ export function SignUpForm() {
         email,
         password1,
         password2,
+        birthdate,
         street,
         state,
         zip,
@@ -79,7 +80,7 @@ export function SignUpForm() {
                 <h2 className='title'> Sign Up </h2>
                 <section className='form-fields'>
                     {   step === 1 ?
-                        <Step1 handleInputChange={handleInputChange} name={name} email={email} password1={password1} password2={password2}/> :
+                        <Step1 handleInputChange={handleInputChange} name={name} email={email} password1={password1} password2={password2} birthdate={birthdate}/> :
                         <Step2 handleInputChange={handleInputChange} street={street} state={state} zip={zip} />
                     }
                 </section>

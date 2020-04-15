@@ -1,35 +1,97 @@
 import React, { useState }  from 'react';
+import { useDispatch } from 'react-redux';
+import { login, signup } from '../../actions/session_actions';
+import { Step1 } from './step1';
+import { Step2 } from './step2';
 
 export function SignUpForm() {
-    const signupForm = {
+    const [inputs, setInputs] = useState({
         name: '',
         email: '',
         password1: '',
         password2: '',
-        errors: {},
+        street: '',
+        state: '',
+        zip: '',
+        birthdate: '',
+    });
+    const [step, setStep] = useState(1);
+
+    const handleInputChange = e => {
+        const { name, value } = e.target;
+        setInputs({...inputs, [name]: value})
     };
 
-    const [inputs, setInputs] = useState(signupForm);
+    const _next = e => {
+        e.preventDefault();
+        setStep(step + 1);
+    };
+
+    const _prev = e => {
+        e.preventDefault();
+        setStep(step <= 1 ? 1 : step - 1)
+    };
+
+    
+    const dispatch = useDispatch(); 
+    const handleSubmit = e => {
+        e.preventDefault();
+        const user = {
+            fName: parsefName(inputs.name),
+            lName: parselname(inputs.name),
+            email: inputs.email,
+            password1: inputs.password1,
+            password2: inputs.password2,
+            street: inputs.street,
+            state: inputs.state,
+            zip: inputs.zip,
+            birthdate: inputs.birthdate,
+        }
+
+        function parsefName(name) {
+            return name.split(' ')[0]
+        };
+        function parselname(name) {
+            return name.split(' ')[1]
+        };
+
+        const userData = Object.assign({}, user);
+        dispatch(signup(userData)).then((response) => {
+            if(response.data && response.data.status === 200) {
+                dispatch(login({email: inputs.email, password: password1}))
+            }
+        })
+    }
+
+    const {
+        name,
+        email,
+        password1,
+        password2,
+        street,
+        state,
+        zip,
+    } = inputs;
 
     return (
         <div className='signup-form-container'>
-            <form className='form'>
+            <form className='form' onSubmit={handleSubmit}>
                 <h2 className='title'> Sign Up </h2>
                 <section className='form-fields'>
-                    <label htmlFor='name'> Full Name:
-                        <input type="text" id='name'/>
-                    </label>
-                    <label htmlFor="email"> Email:
-                        <input type="email" id="email"/>
-                    </label>
-                    <label htmlFor="password1"> Password:
-                        <input type="password" name="" id="password1"/>
-                    </label>
-                    <label htmlFor="password2"> Confirm Password:
-                        <input type="password" name="" id="password2" />
-                    </label>
+                    {   step === 1 ?
+                        <Step1 handleInputChange={handleInputChange} name={name} email={email} password1={password1} password2={password2}/> :
+                        <Step2 handleInputChange={handleInputChange} street={street} state={state} zip={zip} />
+                    }
                 </section>
-                <button type="submit">Submit</button>
+                { step === 2 ? <>
+                    <button className="submit" type="submit">Submit</button> 
+                    <button className="formNav" type='button' onClick={_prev}> Previous </button> 
+                </> : 
+                <> 
+                    <button className='formNav' type='button' onClick={_next}> Next </button> 
+                    <button className='formNav' type='button' onClick={_prev}> Previous </button> 
+                </>
+                }
             </form>
         </div>
     )

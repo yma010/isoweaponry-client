@@ -14,7 +14,7 @@ const App = () => (
         <Sidebar/>
         <Switch>
             <Route path='/' component={Splash} exact/>
-            <Route path='/signup' component={SignUpForm} exact/>
+            <Route path='/signup' component={SignUpForm}/>
         </Switch>
     </div>
 )

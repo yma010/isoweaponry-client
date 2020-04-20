@@ -31,17 +31,17 @@ export default function Nav() {
         if (user) {
             return (
               <>
-                <Link path="/profile">Account</Link>
+                <Link to="/profile">Account</Link>
                 <button onClick={logout}>Logout</button>
-                <Link path="/shopping_cart">Shopping Cart</Link>
+                <Link to="/shopping_cart">Shopping Cart</Link>
               </>
             );
         } else {
           return (
             <>
-              <Link path='/signup'>Sign Up</Link>
-              <Link path='/login'>Login</Link>
-              <Link path="/shopping_cart">Shopping Cart</Link>
+              <Link to='/signup'>Sign Up</Link>
+              <Link to='/login'>Login</Link>
+              <Link to="/shopping_cart">Shopping Cart</Link>
             </>
           )
         }

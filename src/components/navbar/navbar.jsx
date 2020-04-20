@@ -30,15 +30,20 @@ export default function Nav() {
     const getLinks = () => {
         if (user) {
             return (
-              <div className="nav-container">
-                <div className='searchbar'>
-                  <input className='searchbar-input' type="search" name="" id="" />
-                </div>
+              <>
                 <Link path="/profile">Account</Link>
                 <button onClick={logout}>Logout</button>
                 <Link path="/shopping_cart">Shopping Cart</Link>
-              </div>
+              </>
             );
+        } else {
+          return (
+            <>
+              <Link path='/signup'>Sign Up</Link>
+              <Link path='/login'>Login</Link>
+              <Link path="/shopping_cart">Shopping Cart</Link>
+            </>
+          )
         }
     }
 
@@ -50,9 +55,7 @@ export default function Nav() {
           </label>
         </div>
         <div className='account-buttons'>
-          <Link path="/profile">Account</Link>
-          <button className='logout-button' onClick={logout}>Logout</button>
-          <Link path="/shopping_cart">Shopping Cart</Link>
+          {getLinks()}
         </div>
       </div>
     );

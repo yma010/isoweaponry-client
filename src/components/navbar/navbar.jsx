@@ -65,19 +65,21 @@ export default function Nav() {
 
 
     return (
-      <div className="nav-container">
+      <>
         { modal ? 
           <SessionModal modal={modalType} onClose={onClose}/>
           : null
         }
-        <div className="searchbar">
-          <label htmlFor="search"> Search:
-          <input className='searchbar-input' type="search" name="shop-search" id="searchbar" />
-          </label>
+        <div className="nav-container">
+          <div className="searchbar">
+            <label htmlFor="search"> Search:
+            <input className='searchbar-input' type="search" name="shop-search" id="searchbar" />
+            </label>
+          </div>
+          <div className='account-buttons'>
+            {getLinks()}
+          </div>
         </div>
-        <div className='account-buttons'>
-          {getLinks()}
-        </div>
-      </div>
+      </>
     );
 }

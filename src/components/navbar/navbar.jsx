@@ -4,14 +4,16 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../actions/session_actions';
 import { SessionModal } from '../session/sessionModal';
-import { openModal } from '../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
+
 export default function Nav() {
     const [searchParams, setSearchParams] = useState("");
     const [modal, setModal] = useState(false);
 
     const dispatch = useDispatch();
     const user = useSelector((state) => (state.user));
-    const modalType = useSelector((state) => state.ui.modal);
+    const modalType = useSelector((state) => (state.ui.modal));
+
     const logout = (e) => {
         e.preventDefault();
         dispatch(logoutUser());
@@ -40,18 +42,24 @@ export default function Nav() {
         } else {
           return (
             <>
-              <button onClick={handleModal} name='signup'>Sign Up</button>
-              <button onClick={handleModal} name='login'>Login</button>
+              <button onClick={onOpen} name='signup'>Sign Up</button>
+              <button onClick={onOpen} name='login'>Login</button>
               <Link to="/shopping_cart">Shopping Cart</Link>
             </>
           )
         }
     }
 
-    const handleModal = e => {
+    const onOpen = e => {
       e.preventDefault();
       setModal( modal => !modal );
       dispatch(openModal(e.target.name));
+    }
+
+    const onClose = e => {
+      e.preventDefault();
+      setModal( modal => !modal );
+      dispatch(closeModal());
     }
 
 
@@ -59,7 +67,7 @@ export default function Nav() {
     return (
       <div className="nav-container">
         { modal ? 
-          <SessionModal modal={modalType}/> :
+          <SessionModal modal={modalType} onClose={onClose}/> :
           null
         }
         <div className="searchbar">

@@ -75,7 +75,7 @@ export function SignUpForm() {
     } = inputs;
 
     return (
-        <div className='signup-form-container'>
+        <>
             <form className='form' onSubmit={handleSubmit}>
                 <h2 className='title'> Sign Up </h2>
                 <section className='form-fields'>
@@ -94,6 +94,6 @@ export function SignUpForm() {
                 </>
                 }
             </form>
-        </div>
+        </>
     )
 }

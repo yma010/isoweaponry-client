@@ -1,26 +1,18 @@
 import React from 'react';
 import { SignUpForm } from './registration';
 import { LoginForm } from './login';
-import { useDispatch } from 'react-redux';
-import { closeModal } from '../../actions/modal_actions';
 
-export const SessionModal = (modal) => {
-    const dispatch = useDispatch();
 
+export const SessionModal = ({modal, onClose}) => {
     const form = {
         'login' : <LoginForm/>,
         'signup' : <SignUpForm/>,
     }
 
-    const handleModalClose = event => {
-        event.preventDefault();
-        dispatch(closeModal())
-    }
-
     return (
-        <div className='modal-background' onClick={handleModalClose}>
+        <div className='modal-background' onClick={onClose}>
             <div className="modal-window">
-                {form[Object.values(modal)]}
+                {form[modal]}
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ export const SessionModal = ({modal, onClose}) => {
 
     return (
         <div className='modal-background' onClick={onClose}>
-            <div className="modal-window">
+            <div className="modal-window" onClick={e => e.stopPropagation()}>
                 {form[modal]}
             </div>
         </div>

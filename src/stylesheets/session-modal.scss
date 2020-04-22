@@ -27,7 +27,6 @@
                 text-align: center;
             }
             .form-fields {
-                height: 35vh;
                 label {
                     display: flex;
                     flex-direction: column;
@@ -53,15 +52,26 @@
                 border: none;
                 color: white;
                 padding: 10px 0 10px 0;
-                background-color: rgba($color: #27ae60, $alpha: 0.85);
                 cursor: pointer;
 
                 &.formNav {
-                    background-color: rgba($color: #27ae60, $alpha: 0.85);
+                    border-radius: 4px;
+                    background-color: rgba($color: #212121, $alpha: 0.85);
+                    &:hover {
+                        background-color: rgba($color: #212121, $alpha: 1);
+                    }
                 }
                 &.formNav:last-of-type {
-                    margin-top: 5px;
-                    background-color: rgba($color: #4C4A48, $alpha: 0.85);
+                    margin-top: 10px;
+
+                    color: black;
+                    border: black 1px solid;
+                    
+                    border-radius: 4px;
+                    background-color: rgba($color: #E0E0E0, $alpha: 0.85);
+                    &.step1{
+                        display: none;
+                    }
                 }
             }
         }

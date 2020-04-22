@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
 import { login } from '../../actions/session_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 export const LoginForm = () => {
     const [inputs, setInputs] = useState({
@@ -22,11 +23,13 @@ export const LoginForm = () => {
         }
 
         const userData = Object.assign({}, user);
-        dispatch(login(userData))
+        dispatch(login(userData)).then(
+            dispatch(closeModal())
+        );
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
             <h2 className='title'> Login </h2>
             <section className='form-fields'>
                 <label htmlFor="email"> Email:

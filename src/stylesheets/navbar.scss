@@ -10,17 +10,31 @@
     border-bottom: 1px lightgrey solid;
 
     .searchbar {
-        margin-top: 0.5vh;
+        align-self: center;
+
         .searchbar-input {
             width: 15em;
             border-radius: 4px;
         }
+
     }
     .account-buttons {
+        align-self: center;
         .logout-button {
             height: 2rem;
             border: none;
         }
+        button {
+            // border: none;
+
+            cursor: pointer;
+            padding: 0.5em;
+            margin-left: 0.25em;
+            margin-right: 0.25em;
+            &:hover {
+                font-weight: bold;
+            }
+        }        
     }
 }
 
@@ -58,7 +72,6 @@
 
         text-emphasis: center;
     }
-
 
     img {
         width: auto;

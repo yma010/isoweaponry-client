@@ -85,12 +85,12 @@ export function SignUpForm() {
                     }
                 </section>
                 { step === 2 ? <>
-                    <button className="submit" type="submit">Submit</button> 
-                    <button className="formNav" type='button' onClick={_prev}> Previous </button> 
+                    <button className='formNav' type="submit">Submit</button> 
+                    <button className='formNav' type='button' onClick={_prev}> Previous </button> 
                 </> : 
                 <> 
                     <button className='formNav' type='button' onClick={_next}> Next </button> 
-                    <button className='formNav' type='button' onClick={_prev}> Previous </button> 
+                    <button className={`formNav step${step}`} type='button' onClick={_prev}> Previous </button> 
                 </>
                 }
             </form>

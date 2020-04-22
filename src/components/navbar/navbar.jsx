@@ -11,7 +11,7 @@ export default function Nav() {
     const [modal, setModal] = useState(false);
 
     const dispatch = useDispatch();
-    const user = useSelector((state) => (state.user));
+    const user = useSelector((state) => (state.session.user));
     const modalType = useSelector((state) => (state.ui.modal));
 
     const logout = (e) => {
@@ -19,7 +19,7 @@ export default function Nav() {
         dispatch(logoutUser());
 
         return(
-            <Redirect to='/' />
+          <Redirect to='/' />
         )
     };
 

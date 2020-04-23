@@ -30,7 +30,6 @@ export const LoginForm = ({onClose}) => {
 
     return(
         <form className='form' onSubmit={handleSubmit}>
-            <h2 className='title'> Login </h2>
             <section className='form-fields'>
                 <label htmlFor="email"> Email:
                     <input type="email" id="email" name='email' value={inputs.email} onChange={handleInputChange} required />

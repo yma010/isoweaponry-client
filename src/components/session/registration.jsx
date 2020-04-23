@@ -78,7 +78,6 @@ export const SignUpForm = ({onClose}) => {
     return (
         <>
             <form className='form' onSubmit={handleSubmit}>
-                <h2 className='title'> Sign Up </h2>
                 <section className='form-fields'>
                     {   step === 1 ?
                         <Step1 handleInputChange={handleInputChange} name={name} email={email} password1={password1} password2={password2} birthdate={birthdate}/> :

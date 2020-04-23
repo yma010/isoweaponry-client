@@ -9,77 +9,100 @@
 
     background-color: rgba($color: #000000, $alpha: 0.45);
     .modal-window{
+        display: flex;
+        flex-direction: column;
+
         margin: 0 auto;
         align-self: center;
-        .form {
+        
+        background-color: whitesmoke;
+        border: 1px solid #212121;
+        border-radius: 4px;
+        
+        .modal-contents{
             display: flex;
             flex-direction: column;
-            margin: auto;
-            padding: 5vh;
-            border: 1px solid;
-            border-radius: 4px;
-            background-color: whitesmoke;
-            
-            width: 30vh;
-            height: auto;
+            align-items: flex-end;
+            .close-button { 
+                margin-top: 5px;
+                margin-right: 5px;
+
+                font-size: 1.75rem;
+                cursor: pointer;
+                border: none;
+                background-color: none;
+            }
             .title {
                 font-size: 1.5rem;
                 text-align: center;
+                text-transform: capitalize;
+
             }
-            .form-fields {
-                label {
-                    display: flex;
-                    flex-direction: column;
-                    margin-top: 10px;
-                    
-                    input {
+            .form {
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                padding: 5vh;
+                
+                width: 30vh;
+                height: auto;
+                .form-fields {
+                    label {
+                        display: flex;
+                        flex-direction: column;
                         margin-top: 10px;
-                        border-style: none;
-                        border-bottom: 1px solid;
-                        background-color: #E0E0E0;
+                        
+                        input {
+                            margin-top: 10px;
+                            border-style: inset;
+                            border-radius: 4px;
+                            
+                        }
                     }
-                }
-                label:last-of-type {
-                    margin-bottom: 10px;
-                }
-                label:first-of-type{
-                    margin-top: 20px;
-                }
-            }
-
-            button {
-                justify-content: center;
-                border: none;
-                color: white;
-                padding: 10px 0 10px 0;
-                cursor: pointer;
-
-                &.formSubmit{
-                    border-radius: 4px;
-                    background-color: rgba($color: #212121, $alpha: 0.85);
-
-                    &:hover {
-                        background-color: rgba($color: #212121, $alpha: 1);
+                    label:last-of-type {
+                        margin-bottom: 10px;
+                    }
+                    label:first-of-type{
+                        margin-top: 20px;
                     }
                 }
 
-                &.formNav {
-                    border-radius: 4px;
-                    background-color: rgba($color: #212121, $alpha: 0.85);
-                    &:hover {
-                        background-color: rgba($color: #212121, $alpha: 1);
-                    }
-                }
-                &.formNav:last-of-type {
-                    margin-top: 10px;
+                button {
+                    justify-content: center;
+                    border: none;
+                    color: white;
+                    padding: 10px 0 10px 0;
+                    cursor: pointer;
 
-                    color: black;
-                    border: black 1px solid;
-                    
-                    border-radius: 4px;
-                    background-color: rgba($color: #E0E0E0, $alpha: 0.85);
-                    &.step1{
-                        display: none;
+                    &.formSubmit{
+                        margin-top: 20px;
+                        border-radius: 4px;
+                        background-color: rgba($color: #212121, $alpha: 0.85);
+
+                        &:hover {
+                            background-color: rgba($color: #212121, $alpha: 1);
+                        }
+                    }
+
+                    &.formNav {
+                        margin-top: 20px;
+                        border-radius: 4px;
+                        background-color: rgba($color: #212121, $alpha: 0.85);
+                        &:hover {
+                            background-color: rgba($color: #212121, $alpha: 1);
+                        }
+                    }
+                    &.formNav:last-of-type {
+                        margin-top: 10px;
+
+                        color: black;
+                        border: black 1px solid;
+                        
+                        border-radius: 4px;
+                        background-color: rgba($color: #E0E0E0, $alpha: 0.85);
+                        &.step1{
+                            display: none;
+                        }
                     }
                 }
             }

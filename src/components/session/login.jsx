@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
 import { login } from '../../actions/session_actions';
-import { closeModal } from '../../actions/modal_actions';
 
-export const LoginForm = () => {
+export const LoginForm = ({onClose}) => {
     const [inputs, setInputs] = useState({
         email: '',
         password: '',
@@ -15,6 +14,7 @@ export const LoginForm = () => {
     };
 
     const dispatch = useDispatch();
+
     const handleSubmit = e => {
         e.preventDefault();
         const user = {
@@ -23,9 +23,9 @@ export const LoginForm = () => {
         }
 
         const userData = Object.assign({}, user);
-        dispatch(login(userData)).then(
-            dispatch(closeModal())
-        );
+
+        dispatch(login(userData))
+        onClose(e);
     }
 
     return(
@@ -39,7 +39,7 @@ export const LoginForm = () => {
                     <input type="password" id="password1" name='password' value={inputs.password} onChange={handleInputChange} required />
                 </label>   
             </section>
-            <button className="submit" type="submit">Submit</button>
+            <button className="formSubmit"  type="submit">Submit</button>
         </form>
     )
 }

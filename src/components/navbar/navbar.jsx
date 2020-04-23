@@ -67,9 +67,10 @@ export default function Nav() {
     return (
       <>
         { modal ? 
-          <SessionModal modal={modalType} onClose={onClose}/>
-          : null
+          <SessionModal modal={modalType} onClose={onClose} modalStatus={modal}/>:
+          null
         }
+        
         <div className="nav-container">
           <div className="searchbar">
             <label htmlFor="search"> Search:

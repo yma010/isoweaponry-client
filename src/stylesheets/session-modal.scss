@@ -54,6 +54,15 @@
                 padding: 10px 0 10px 0;
                 cursor: pointer;
 
+                &.formSubmit{
+                    border-radius: 4px;
+                    background-color: rgba($color: #212121, $alpha: 0.85);
+
+                    &:hover {
+                        background-color: rgba($color: #212121, $alpha: 1);
+                    }
+                }
+
                 &.formNav {
                     border-radius: 4px;
                     background-color: rgba($color: #212121, $alpha: 0.85);

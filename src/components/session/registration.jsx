@@ -4,7 +4,7 @@ import { login, signup } from '../../actions/session_actions';
 import { Step1 } from './step1';
 import { Step2 } from './step2';
 
-export function SignUpForm() {
+export const SignUpForm = ({onClose}) => {
     const [inputs, setInputs] = useState({
         name: '',
         email: '',
@@ -59,6 +59,7 @@ export function SignUpForm() {
         dispatch(signup(userData)).then((response) => {
             if(response.data && response.data.status === 200) {
                 dispatch(login({email: inputs.email, password: password1}))
+                onClose(e);
             }
         })
     }
@@ -85,7 +86,7 @@ export function SignUpForm() {
                     }
                 </section>
                 { step === 2 ? <>
-                    <button className='formNav' type="submit">Submit</button> 
+                    <button className='formSubmit' type="submit">Submit</button> 
                     <button className='formNav' type='button' onClick={_prev}> Previous </button> 
                 </> : 
                 <> 

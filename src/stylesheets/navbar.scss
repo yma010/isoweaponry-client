@@ -26,13 +26,17 @@
         }
         button {
             // border: none;
-
+            background-color: none;
+            border: none;
             cursor: pointer;
             padding: 0.5em;
             margin-left: 0.25em;
             margin-right: 0.25em;
+            font-weight: 700;
             &:hover {
-                font-weight: bold;
+                border-bottom: 1px solid black;
+                padding-top: 0.95rem;
+                padding-bottom: 0.85rem;
             }
         }        
     }

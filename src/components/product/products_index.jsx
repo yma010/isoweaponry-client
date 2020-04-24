@@ -1,28 +1,12 @@
 import React from 'react';
-import { ProductIndexItem } from './product_index_item';
+import { useDispatch } from 'react-redux';
 
-class ProductIndex extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+export function RentalIndex() {
+    const dispatch = useDispatch();
 
-    componentDidMount(){
-        this.props.fetchProducts()
-    }
-
-    render(){
-        const { products } = this.props;
-        const productIndexItems =  products.map( product =>(
-            <ProductIndexItem key={product.id} product={product} />
-        ))
-
-        return(
-            <ul className='product-index-list'>
-                {/* {productIndexItems} */}
-            </ul>
-        )
-    }
-
+    return (
+        <div>
+            This is the Rental Index Page
+        </div>
+    )
 }
-
-export default ProductIndex;

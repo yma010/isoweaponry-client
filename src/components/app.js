@@ -8,6 +8,7 @@ import Nav from './navbar/navbar';
 import Sidebar from './navbar/sidebar';
 import { SignUpForm } from '../components/session/registration'
 import { LoginForm } from '../components/session/login'
+import { RentalIndex } from '../components/product/products_index'
 
 const App = () => (
     <div className='page-container'>
@@ -17,6 +18,7 @@ const App = () => (
             <Route path='/' component={Splash} exact/>
             <Route path='/signup' component={SignUpForm}/>
             <Route path='/login' component={LoginForm}/>
+            <Route path='/rentals' component={RentalIndex}/>
         </Switch>
         
     </div>

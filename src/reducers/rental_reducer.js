@@ -1,9 +1,10 @@
-import { RECEIVE_ALL_RENTALS } from '../actions/product_actions';
+import { RECEIVE_ALL_RENTALS, RECEIVE_RENTAL } from '../actions/product_actions';
 import { merge } from 'lodash';
 
 export default function( state = {}, action) {
     Object.freeze(state);
-    const newState;
+
+    let newState = {};
 
     switch(action.type) {
         case RECEIVE_ALL_RENTALS:

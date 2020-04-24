@@ -7,7 +7,6 @@ import { SessionModal } from '../session/sessionModal';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 export default function Nav() {
-    const [searchParams, setSearchParams] = useState("");
     const [modal, setModal] = useState(false);
 
     const dispatch = useDispatch();
@@ -23,12 +22,6 @@ export default function Nav() {
         )
     };
 
-    const search = e => {
-        e.preventDefault();
-        if (searchParams.length !== 0) {
-            this.props.history.push(`/index?${searchParams}`)
-        };
-    }
 
     const getLinks = () => {
         if (user) {

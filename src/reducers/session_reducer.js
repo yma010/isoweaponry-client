@@ -30,8 +30,6 @@ export default function (state = initialState, action) {
         isSignedIn: true
       }
       default:
-        return {
-          user: undefined
-        };
+        return {};
   }
 }

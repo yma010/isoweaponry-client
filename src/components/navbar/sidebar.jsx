@@ -7,7 +7,7 @@ export default function Sidebar() {
     return(
         <>
             <div className='sidebar-container'>
-                <Link path='/'><img src={`${ISOWeaponryBanner}`} alt="" /></Link>
+                <Link to='/'><img src={`${ISOWeaponryBanner}`} alt="" /></Link>
                 <ul>
                     <li className='sidebar-nav-link'><Link to='/'>Home</Link></li>
                     <li className='sidebar-nav-link'><Link to='/policy'>Rental Policy</Link></li>

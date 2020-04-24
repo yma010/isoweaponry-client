@@ -23,7 +23,7 @@ export const receiveRental = (payload) => {
 };
 
 export const fetchRentals = () => dispatch => {
-    APIProductUtil.fetchProducts(searchParams)
+    APIProductUtil.fetchRentals()
         .then(rentals => dispatch(receiveAllRentals(rentals)))
 };
 
@@ -34,14 +34,14 @@ export const fetchRental = rental => {
     };
 }
 
-export const createProduct = (data) => dispatch => {
-    return APIProductUtil.createProduct(data)
-        .then(product => dispatch(receiveProduct(product)))
+export const createRental = (data) => dispatch => {
+    return APIProductUtil.fetchRentals(data)
+        .then(product => dispatch(receiveRental(product)))
         .catch(err => console.log(err))
 };
 
-export const updateProduct = (data) => dispatch => {
-    return APIProductUtil.updateProduct(data)
-        .then(product => dispatch(receiveProduct(product)))
+export const updateRental = (data) => dispatch => {
+    return APIProductUtil.updateRental(data)
+        .then(product => dispatch(receiveRental(product)))
         .catch(err => console.log(err))
 };

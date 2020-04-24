@@ -1,0 +1,32 @@
+.product-index {
+    grid-area: 2 / 2 / 6 / 4;
+    height: 100%;
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    img {
+        height: auto;
+        width: 100%;
+    }
+
+    .list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        li {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            height: 30%;
+            width: 30%;
+            margin-right: 10px;
+            font-weight: 700;
+            h3 {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+}

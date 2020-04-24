@@ -2,6 +2,7 @@
 @import './splash.scss';
 @import './navbar.scss';
 @import './session-modal.scss';
+@import './rentals.scss';
 
 * {
     font-size: 16px;
@@ -16,7 +17,7 @@
     .page-container {
         display: grid;
         grid-template-columns: 25vw auto auto;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-rows: 10vh repeat(4, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }

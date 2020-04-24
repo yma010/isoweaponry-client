@@ -18,7 +18,8 @@ const App = () => (
             <Route path='/' component={Splash} exact/>
             <Route path='/signup' component={SignUpForm}/>
             <Route path='/login' component={LoginForm}/>
-            <Route path='/rentals' component={RentalIndex}/>
+            <Route path='/rentals' component={RentalIndex} exact/>
+            <Route path='/rentals/smallarms' component={RentalIndex} exact/>
         </Switch>
         
     </div>

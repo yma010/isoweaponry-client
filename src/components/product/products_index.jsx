@@ -31,6 +31,8 @@ export function RentalIndex() {
         rental.category === "heavy"
     )
 
+    console.log(window.history)
+
     useEffect(() => {
         dispatch(fetchRentals())
     }, [dispatch]);

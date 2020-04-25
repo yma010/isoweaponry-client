@@ -19,9 +19,8 @@ const App = () => (
             <Route path='/signup' component={SignUpForm}/>
             <Route path='/login' component={LoginForm}/>
             <Route path='/rentals' component={RentalIndex} exact/>
-            <Route path='/rentals/smallarms' component={RentalIndex} exact/>
+            <Route path='/rentals/:rentalModel' component={RentalIndex}/>
         </Switch>
-        
     </div>
 )
 

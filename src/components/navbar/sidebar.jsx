@@ -3,7 +3,21 @@ import { Link } from 'react-router-dom';
 import ISOWeaponryBanner from '../../stylesheets/images/ISO_Banner.png';
 
 export default function Sidebar() {
+    const categories = {
+        "smallarms": "Small Arms",
+        "submachine": "Submachine Gun",
+        "rifles": "Rifles",
+        "heavy": "Heavy"
+    };
 
+    const catLinks = Object.entries(categories).map((cat, idx) => {
+        return(
+            <li className='sidebar-nav-link' key={idx}>
+                <Link to={`/rentals/${cat[0]}`}>{cat[1]}</Link>
+            </li>
+        )
+    });
+    
     return(
         <>
             <div className='sidebar-container'>
@@ -11,10 +25,7 @@ export default function Sidebar() {
                 <ul>
                     <li className='sidebar-nav-link'><Link to='/'>Home</Link></li>
                     <li className='sidebar-nav-link'><Link to='/policy'>Rental Policy</Link></li>
-                    <li className='sidebar-nav-link'><Link to='/rentals/smallarms'>Small Arms</Link></li>
-                    <li className='sidebar-nav-link'><Link to='/rentals/submachine'>Submachine Guns</Link></li>
-                    <li className='sidebar-nav-link'><Link to='/rentals/rifles'>Rifles</Link></li>
-                    <li className='sidebar-nav-link'><Link to='/rentals/heavy'>Heavy Weapon</Link></li>
+                    {catLinks}
                 </ul>
             </div>
         </>
